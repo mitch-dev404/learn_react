@@ -40,25 +40,29 @@ function App() {
           <h2>Core Concepts</h2>
           <ul>
             <CoreConcept
+              /* ******************************************
+               * This long hand way works, using image,
+               * title, and description as keys to
+               * the values found in the data.js file.
+               * **************************************** */
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
             />
             <CoreConcept
-              title={CORE_CONCEPTS[1].title}
-              description={CORE_CONCEPTS[1].description}
-              image={CORE_CONCEPTS[1].image}
+              /* ******************************************
+               * This also works, using the spread 
+               * operator to access all the key value 
+               * pairs in the object located at index 1 
+               * of the data.js file. However, this only 
+               * works when the keys in the data are 
+               * the same as the arguments taken in 
+               * the function definition.
+               * **************************************** */
+              {...CORE_CONCEPTS[1]}
             />
-            <CoreConcept
-              title={CORE_CONCEPTS[2].title}
-              description={CORE_CONCEPTS[2].description}
-              image={CORE_CONCEPTS[2].image}
-            />
-            <CoreConcept
-              title={CORE_CONCEPTS[3].title}
-              description={CORE_CONCEPTS[3].description}
-              image={CORE_CONCEPTS[3].image}
-            />
+            <CoreConcept {...CORE_CONCEPTS[2]}/>
+            <CoreConcept {...CORE_CONCEPTS[3]}/>
           </ul>
         </section>
       </main>
